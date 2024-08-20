@@ -18,7 +18,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test
+          npx playwright test --trace on
         '''
       }
     }
