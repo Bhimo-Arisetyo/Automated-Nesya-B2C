@@ -283,7 +283,7 @@
     {
       "name": "G_AUTHUSER_H",
       "value": "0",
-      "domain": ".tshi-dev.tenang.ai",
+      "domain": ".nesya-staging.tenang.ai",
       "path": "/",
       "expires": -1,
       "httpOnly": false,
@@ -293,7 +293,7 @@
   ],
   "origins": [
     {
-      "origin": "https://tshi-dev.tenang.ai",
+      "origin": "https://nesya-staging.tenang.ai",
       "localStorage": [
         {
           "name": "appLanguage",
@@ -301,7 +301,7 @@
         },
         {
           "name": "appSession",
-          "value": "{\"userId\":\"55dc8d95-21b5-4c29-a439-e1a7dcfb1e5c\",\"username\":\"Test Bhimo\",\"email\":\"testbhimo@gmail.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1ZGM4ZDk1LTIxYjUtNGMyOS1hNDM5LWUxYTdkY2ZiMWU1YyIsInJvbGUiOiJVU0VSX1BBVElFTlRfUk9MRSIsImlhdCI6MTcyNTk2MTYxNH0.8ILZRI1TbUZBIJoqSj0gTHM_QXEnixnWgJVC0GJt95w\"}"
+          "value": "{\"userId\":\"4695316c-10df-42db-aee9-def005da7373\",\"username\":\"Arai Ethical Hacking\",\"email\":\"atasrestuai@gmail.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2OTUzMTZjLTEwZGYtNDJkYi1hZWU5LWRlZjAwNWRhNzM3MyIsInJvbGUiOiJVU0VSX1BBVElFTlRfUk9MRSIsImlhdCI6MTcyNTI1Nzk4N30.FFdoIRe2EvFlUzA1P5KQrcRmo-7moGNm0DP8R-nf1qA\"}"
         },
         {
           "name": "appTheme",

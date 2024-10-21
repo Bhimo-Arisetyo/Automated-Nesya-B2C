@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://tshi-dev.tenang.ai/voucher');
+  await page.goto('https://nesya-staging.tenang.ai/voucher');
   await page.waitForLoadState('networkidle'); 
   await page.getByPlaceholder('Masukan Kode').click();
   await page.getByPlaceholder('Masukan Kode').fill('vcode04');

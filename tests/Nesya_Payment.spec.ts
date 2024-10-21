@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
 test('Compare Screenshot packages', async ({ page }) => {
-  await page.goto('https://tshi-dev.tenang.ai/packages');
+  await page.goto('https://nesya-staging.tenang.ai/packages');
   await expect(page).toHaveScreenshot();
 });
 
 test('Check Harga', async ({ page }) => {
-  await page.goto('https://tshi-dev.tenang.ai/packages');
+  await page.goto('https://nesya-staging.tenang.ai/packages');
   await page.locator('a').filter({ hasText: 'Starling 30 menit + 30 menit' }).click();
   await expect(page.locator('app-checkout')).toContainText('Rp5.900');
   const page2Promise = page.waitForEvent('popup');
@@ -17,7 +17,7 @@ test('Check Harga', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Thank you! Your order' })).toBeVisible();
 
 
-  await page.goto('https://tshi-dev.tenang.ai/packages');
+  await page.goto('https://nesya-staging.tenang.ai/packages');
   await page.locator('a').filter({ hasText: 'Gula Aren 12 jam + 1 jam' }).getByRole('button').click();
   await expect(page.locator('app-checkout')).toContainText('Rp18.900');
   const page3Promise = page.waitForEvent('popup');
@@ -28,7 +28,7 @@ test('Check Harga', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Thank you! Your order' })).toBeVisible();
 
 
-  await page.goto('https://tshi-dev.tenang.ai/packages');
+  await page.goto('https://nesya-staging.tenang.ai/packages');
   await page.locator('a').filter({ hasText: 'Free Flow Unlimited 1 bulan' }).click();
   await expect(page.locator('app-checkout')).toContainText('Rp199.000');
   const page4Promise = page.waitForEvent('popup');

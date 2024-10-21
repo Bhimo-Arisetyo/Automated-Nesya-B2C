@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Themeswithcertest', async ({ page }) => {
-  await page.goto('https://tshi-dev.tenang.ai/');
+  await page.goto('https://nesya-staging.tenang.ai/');
   await page.waitForLoadState('networkidle');
   const locator = page.locator('body');
   //Check background for Light theme 
