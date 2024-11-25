@@ -293,7 +293,7 @@
   ],
   "origins": [
     {
-      "origin": "https://nesya-staging.tenang.ai",
+      "origin": "https://nesya-dev.tenang.ai",
       "localStorage": [
         {
           "name": "appLanguage",
@@ -301,7 +301,7 @@
         },
         {
           "name": "appSession",
-          "value": "{\"userId\":\"4695316c-10df-42db-aee9-def005da7373\",\"username\":\"Arai Ethical Hacking\",\"email\":\"atasrestuai@gmail.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2OTUzMTZjLTEwZGYtNDJkYi1hZWU5LWRlZjAwNWRhNzM3MyIsInJvbGUiOiJVU0VSX1BBVElFTlRfUk9MRSIsImlhdCI6MTcyNTI1Nzk4N30.FFdoIRe2EvFlUzA1P5KQrcRmo-7moGNm0DP8R-nf1qA\"}"
+          "value": "{\"userId\":\"651089f4-1bbc-4180-a772-715dab4e5ec4\",\"username\":\"Bimbim Test\",\"email\":\"bimbimtest01@gmail.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTA4OWY0LTFiYmMtNDE4MC1hNzcyLTcxNWRhYjRlNWVjNCIsInJvbGUiOiJVU0VSX1BBVElFTlRfUk9MRSIsImlhdCI6MTczMjEwMDg0MH0.22bBMnZPttSUs9B8_3RAyAco-dxkT50u2LRst7jnSTI\"}"
         },
         {
           "name": "appTheme",
