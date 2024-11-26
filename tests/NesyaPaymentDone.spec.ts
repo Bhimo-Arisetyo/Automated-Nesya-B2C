@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Payment and check if done', async ({ page }) => {
-  await page.goto('https://nesya-dev.tenang.ai/packages');
+  await page.goto(process.env.BASE_URL! +'/packages');
   await page.locator('a').filter({ hasText: 'Starling 30 menit + 30 menit' }).click();
   await expect(page.locator('app-checkout')).toContainText('Rp5.900');
   const page2Promise = page.waitForEvent('popup');
@@ -21,6 +21,18 @@ test('Payment and check if done', async ({ page }) => {
   await page.goto('https://nesya-staging.tenang.ai/')
   await page.waitForLoadState('networkidle')
 
+});
+
+test('Payment Failed', async ({ page }) => {
+  await page.goto(process.env.BASE_URL! + '/packages');
+  await page.locator('a').filter({ hasText: 'Starling 30 menit + 30 menit' }).click();
+  await expect(page.locator('app-checkout')).toContainText('Rp5.900');
+  const page2Promise = page.waitForEvent('popup');
+  await page.getByRole('button', { name: 'Checkout' }).click();
+  const page2 = await page2Promise;
+  await expect(page2.getByRole('cell')).toContainText('IDR 5.900');
+  await page.locator('button:has-text("Confirm Payment")').click();
+  await expect(page.locator('.swal2-popup.swal2-show')).toContainText('Pastikan kamu sudah menyelesaikan pembayaran')
 });
 
 test('Check Subscriptsion', async ({ page }) => {

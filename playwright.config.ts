@@ -1,4 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+import * as dotenv from 'dotenv';
+
+const env = process.env.NODE_ENV || 'development'; // Defaults to 'development'
+dotenv.config({ path: `.env.${env}` });
+const storageStatePath = process.env.USER_FILE_PATH;
+
 
 /**
  * Read environment variables from file.
@@ -26,40 +32,34 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-
+    baseURL: process.env.BASE_URL,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
+    storageState: storageStatePath, // Use the value from .env
   },
 
   /* Configure projects for major browsers */
   projects: [
-    { name: 'setup', testMatch: /.*\.setup\.ts/ },
     {
       name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
       },
-      dependencies: ['setup'],
-
     },
 
     {
       name: 'firefox',
       use: { 
         ...devices['Desktop Firefox'],
-        storageState: 'playwright/.auth/user.json',
        },
-       dependencies: ['setup'],
     },
 
     {
       name: 'webkit',
       use: { 
         ...devices['Desktop Safari'],
-        storageState: 'playwright/.auth/user.json',
       },
-      dependencies: ['setup'],
     },
 
     /* Test against mobile viewports. */
@@ -80,9 +80,7 @@ export default defineConfig({
     {
       name: 'Google Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome',
-      storageState: 'playwright/.auth/user.json',
      },
-     dependencies: ['setup'],
     },
   ],
 

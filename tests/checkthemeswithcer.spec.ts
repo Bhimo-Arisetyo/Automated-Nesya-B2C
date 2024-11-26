@@ -1,7 +1,15 @@
 import { test, expect } from '@playwright/test';
+import fs from 'fs';
+
+
+// const storageStatePath = process.env.USER_FILE_PATH;
+
+// test.use({
+//     storageState: storageStatePath,
+// });
 
 test('Themeswithcertest', async ({ page }) => {
-  await page.goto('https://nesya-dev.tenang.ai/');
+  await page.goto(process.env.BASE_URL!);
   await page.waitForLoadState('networkidle');
   const locator = page.locator('body');
   //Check background for Light theme 

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Voucher gagal', async ({ page }) => {
-  await page.goto('https://nesya-dev.tenang.ai/voucher');
+  await page.goto(process.env.BASE_URL! + '/voucher');
   await page.waitForLoadState('networkidle'); 
   await page.getByPlaceholder('Masukan Kode').click();
   await page.getByPlaceholder('Masukan Kode').fill('Asallll');
@@ -12,7 +12,7 @@ test('Voucher gagal', async ({ page }) => {
 });
 
 test('Voucher Berhasil', async ({ page }) => {
-  await page.goto('https://nesya-dev.tenang.ai/voucher');
+  await page.goto(process.env.BASE_URL! + '/voucher');
   await page.waitForLoadState('networkidle'); 
   await page.getByPlaceholder('Masukan Kode').click();
   await page.getByPlaceholder('Masukan Kode').fill('testgulaaren');

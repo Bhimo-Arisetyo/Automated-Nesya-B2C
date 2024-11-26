@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
     // Masuk Ke Tshi-dev.nesya
-  await page.goto('https://nesya-staging.tenang.ai/');
+  await page.goto(process.env.BASE_URL!);
   await page.waitForLoadState('networkidle');
     //Ganti bahasa ke inggris dan check text
   await page.getByRole('main').locator('label div').nth(2).click();

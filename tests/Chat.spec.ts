@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Chat With Nesya', async ({ page }) => {
-  await page.goto('https://nesya-staging.tenang.ai/');
+  await page.goto(process.env.BASE_URL!);
 
   await page.getByRole('button', { name: 'Percakapan Baru' }).click();
   // await expect(page.locator('app-chat-bubble')).toHaveText('');
@@ -33,7 +33,7 @@ test('Chat With Nesya', async ({ page }) => {
                     
 
 test('Check feedback visibility', async ({ page }) => {
-  await page.goto('https://nesya-staging.tenang.ai/');
+  await page.goto(process.env.BASE_URL!);
   await page.locator('app-card-room > a').first().click();
   for (let i = 0; i < 4; i++) {
     await page.getByRole('textbox').click();
