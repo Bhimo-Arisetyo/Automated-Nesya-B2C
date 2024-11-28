@@ -1,12 +1,4 @@
 import { test, expect } from '@playwright/test';
-import fs from 'fs';
-
-
-// const storageStatePath = process.env.USER_FILE_PATH;
-
-// test.use({
-//     storageState: storageStatePath,
-// });
 
 test('Themeswithcertest', async ({ page }) => {
   await page.goto(process.env.BASE_URL!);

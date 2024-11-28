@@ -18,7 +18,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test --trace on
+        NODE_ENV=dev  npx playwright test --trace on
         '''
       }
     }
