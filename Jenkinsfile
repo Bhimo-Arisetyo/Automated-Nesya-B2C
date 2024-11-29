@@ -15,6 +15,19 @@ pipeline {
         '''
       }
     }
+    stage('install Dotenv') {
+      steps {
+        sh '''
+          npm install dotenv
+        '''
+      }
+    }
+    stage('install faker') {
+      steps {
+        sh '''
+          npm install --save-dev @faker-js/faker   
+        '''
+      }
     stage('test') {
       steps {
         sh '''

@@ -50,3 +50,11 @@ test('Check feedback visibility', async ({ page }) => {
   }
   
 });
+
+
+test('Chat Limit Room', async ({ page }) => {
+  await page.goto('https://nesya-dev.tenang.ai/');
+  await page.getByRole('textbox').click();
+  await page.getByRole('textbox').fill('hai nes');
+  await expect(page.locator('#swal2-html-container')).toContainText('User limited to create new session');
+});
