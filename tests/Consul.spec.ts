@@ -20,7 +20,7 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('x-api-key').dblclick();
   await page.getByPlaceholder('x-api-key').fill('519cc0771311f10ef7c22b1cee2cfc75d9629a9235ebe075acc97679bfbb548c');
   await page.getByRole('button', { name: 'Execute' }).click();
-  let link = await page.getByText('"https://consultation-dev.').innerText();
+  let link = await page.getByText(process.env.URL_CONSUL!).innerText();
   link = link.replace(/^"|"$/g, '');
   await page.goto(link);
   await expect(page.getByText('Loading, mohon bertahan kamu')).toBeHidden({ timeout: 7000 });

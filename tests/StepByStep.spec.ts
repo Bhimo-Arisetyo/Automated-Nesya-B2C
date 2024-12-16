@@ -115,9 +115,10 @@ test.describe.serial('Packages and Payment ', () => {
         await expect(page2.locator('[data-testid="success-description"]')).toHaveText(/Your order #[a-z0-9-]+ has been paid for successfully/);
         await expect(page.getByRole('heading', { name: 'Thank you! Your order' })).toBeVisible();
         await page.locator('button:has-text("Confirm Payment")').click();
-        await page.locator('.swal2-popup.swal2-show').isVisible();
+        // await page.locator('.swal2-popup.swal2-show').isVisible(); buat locator popup aja
+        await expect(page.locator('#swal2-html-container')).toContainText('Makasih ya udah traktir Nesya, Yuk ngobrol!');
         await page.waitForLoadState('networkidle')
-        await page.goto('https://nesya-staging.tenang.ai/')
+        await page.goto(process.env.BASE_URL!)
         await page.waitForLoadState('networkidle')
         
     });
@@ -168,6 +169,7 @@ test.describe.serial('Packages and Payment ', () => {
             await page.goto(process.env.BASE_URL!);
             await page.getByRole('textbox').click();
             await page.getByRole('textbox').fill('hai nes');
+            await page.getByRole('textbox').press('Enter');
             await expect(page.locator('#swal2-html-container')).toContainText('User limited to create new session');
         });                
 
